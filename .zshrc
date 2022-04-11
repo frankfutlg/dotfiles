@@ -1,4 +1,4 @@
-# PROMPT
+# PROMPTS
 autoload -U colors && colors
 PS1="%{$fg[blue]%}%~ %{$fg[magenta]%}   %{$fg[white]%}"
 RPS1="%* %{$fg[green]%} " 
@@ -27,6 +27,8 @@ bindkey '^[[P' delete-char
 # ALIASES
 alias dir='ls -a --color=auto'
 alias del='sudo rm -rf'
+alias cc='cp -rf'
+alias killp='killall'
 alias localsource='cd ~/.local/src'
 alias makestallsck='rm -rf config.h && sudo make install'
 alias xbpi='sudo xbps-install -S'
