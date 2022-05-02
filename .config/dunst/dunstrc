@@ -1,0 +1,26 @@
+[global]
+    monitor = 0
+    follow = keyboard
+    width = 240
+    height = 350
+    offset = 8x36
+    padding = 6
+    horizontal_padding = 6
+    font = JetBrains Mono Medium 8
+    format = "<b>%s</b>\n%b"
+    frame_width = 2
+    frame_color = "#96CDFB"
+    separator_color= frame
+
+[urgency_low]
+background = "#1E1E2E"
+foreground = "#D9E0EE"
+
+[urgency_normal]
+background = "#1E1E2E"
+foreground = "#D9E0EE"
+
+[urgency_critical]
+background = "#1E1E2E"
+foreground = "#D9E0EE"
+frame_color = "#F8BD96"
