@@ -1,0 +1,11 @@
+#!/bin/dash
+
+# Colorscheme
+. $HOME/.local/bin/catppuccin
+
+# Variables
+cpu="$(grep -o "^[^ ]*" /proc/loadavg | sed s/a//g)"
+icon=""
+
+# Display
+echo "^d^ ^c$pink^$icon ^c$lavender^$cpu^d^"

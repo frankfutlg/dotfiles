@@ -1,0 +1,3 @@
+#!/bin/bash
+path="$HOME/Media/Screenshots/$(date +%s).png"
+maim -u -s "$path" && xclip -selection clipboard -t image/png "$path"

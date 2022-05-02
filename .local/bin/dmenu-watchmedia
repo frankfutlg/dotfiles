@@ -1,0 +1,16 @@
+#!/bin/bash
+
+function watchmedia {
+  options="Cancel\nAnime\nYouTube"
+	selected=$(echo -e $options | dmenu -p Watch:)
+  if [[ $selected = "Cancel" ]]; then
+            return
+  elif [[ $selected = "Anime" ]]; then
+            st -T 'Watch Anime ' ani-cli
+  elif [[ $selected = "YouTube" ]]; then
+            ytfzf -D -l
+  fi
+}
+
+
+watchmedia

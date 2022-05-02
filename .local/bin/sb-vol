@@ -1,0 +1,25 @@
+#!/bin/dash
+
+# Colorscheme
+. $HOME/.local/bin/catppuccin
+
+# Variables
+vol="$(pamixer --get-volume)"
+
+# Custom Icons
+if [ "$vol" -gt "100" ]; then
+	icon="^c$peach^^d^"
+elif [ "$vol" -ge "50" ]; then
+	icon="^c$yellow^墳^d^"
+elif [ "$vol" -ge "25" ]; then
+	icon="^c$yellow^奔^d^"
+elif [ "$vol" -gt "0" ]; then
+	icon="^c$yellow^^d^"
+else
+	echo "婢 0%%" && exit
+fi
+
+[ $(pamixer --get-mute) = true ] && echo "ﱝ muted" && exit
+
+# Display
+echo "$icon ^c$lavender^$vol%^d^"

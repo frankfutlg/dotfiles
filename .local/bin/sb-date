@@ -1,0 +1,11 @@
+#!/bin/dash
+
+# Colorscheme
+. $HOME/.local/bin/catppuccin
+
+# Variables
+date="$(date '+%d/%m/%y, %a')"
+icon=""
+
+# Display
+echo "^c$green^$icon ^c$lavender^$date^d^"

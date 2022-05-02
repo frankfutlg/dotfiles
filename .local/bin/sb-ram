@@ -1,0 +1,20 @@
+#!/bin/dash
+
+# Colorscheme
+. $HOME/.local/bin/catppuccin
+
+# Variables
+ram="$(free -h | awk '/^Mem/ { print $3 "/" $2 }' | sed "s/Mi/M/g;s/Gi/G/g")"
+mem="$(free -m | sed -n '2{p;q}' | awk '{print ("%1.2fGiB", ( $3 / 1))}' | sed "s/%1.2fGiB //g")"
+
+# Custom Icons
+if [ "$mem" -gt "5000" ]; then
+	icon=""
+elif [ "$mem" -gt "7325" ]; then
+	icon=""
+else
+	icon=""
+fi
+
+# Display
+echo "^c$red^$icon ^c$lavender^$ram^d^"

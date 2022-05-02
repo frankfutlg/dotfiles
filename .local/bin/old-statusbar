@@ -1,0 +1,49 @@
+#!/bin/dash
+
+interval=0
+
+# colorscheme
+. ~/.local/bin/catppuccin
+
+cpu() {
+  	 cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
+
+	 printf "^b$pink^^c$black0^ CPU "
+	 printf "^b$black2^^c$lavender^ $cpu_val"
+}
+
+mem() {	
+	 mem_val=$(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)
+	 
+	 printf "^b$red^^c$black0^ RAM "
+	 printf "^b$black2^^c$lavender^ $mem_val "
+}
+
+vol() {
+	 get_vol=$(pamixer --get-volume)
+
+	 printf "^b$yellow^^c$black0^ VOL "
+	 printf "^b$black2^^c$lavender^ $get_vol%% "
+}
+
+date() {
+	 date="$(date '+%d/%m/%Y, %a')"
+
+	 printf "^b$green^^c$black0^ DATE "
+#	 printf "^b$black2^^c$lavender^ assdasdasd ^d^"
+}
+
+time() {
+	 time=$(date '+%H:%M')
+
+	 printf "^b$blue^^c$black0^ TIME "
+	 printf "^b$black2^^c$black0^ $time "
+}
+
+while true; do
+
+  [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ]
+  interval=$((interval + 1))
+
+  sleep 1 && xsetroot -name "$updates $(cpu) $(mem) $(vol) $(date)"
+done
