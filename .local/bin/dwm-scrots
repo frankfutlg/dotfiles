@@ -1,0 +1,2 @@
+#!/bin/sh
+scrot -s -l mode=edge $HOME/pix/scrots/%d-%m-%Y-%H:%M:%S_$wx$h.png | xclip -selection clipboard -target image/png -i $f
