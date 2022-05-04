@@ -1,6 +1,6 @@
 # PROMPTS
 autoload -U colors && colors
-PS1=" %{$fg[green]%}  %{$fg[blue]%}%3~  "
+PS1=" %{$fg[green]%}󰮯  %{$fg[blue]%}%3~  "
 RPS1="%{$fg[red]%} "
 
 # SOURCES
@@ -29,8 +29,6 @@ bindkey '^[[4~' end-of-line
 bindkey '^[[P' delete-char
 
 # ALIASES
-alias dir='ls -a --color=auto'
-alias del='doas rm -r'
 alias img='sxiv *'
 alias cc='cp -rf'
 alias ls='exa --color=always --group-directories-first'
@@ -40,10 +38,5 @@ alias schedutil='doas cpupower frequency-set -g schedutil'
 alias makestallsck='rm -rf config.h && doas make install'
 alias cleanlefts='rm -rf *.orig && rm -rf *.rej'
 alias zshrc='cd && nvim .zshrc'
-alias xbi='doas xbps-install -S'
-alias xbr='doas xbps-remove -R'
-alias xbu='doas xbps-install -Su'
-alias xbls='xbps-query -s'
-alias xbs='xbps-query -Rs'
 alias ytmp3='yt-dlp --extract-audio -audio-quality 0 --audio-format mp3'
 alias ytmp4='yt-dlp -f "bestvideo+bestaudio[ext=m4a]/best"'
